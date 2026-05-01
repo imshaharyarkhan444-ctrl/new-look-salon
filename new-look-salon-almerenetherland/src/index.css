@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --color-gold: #c9a96a;
+  --color-gold-dark: #a8884a;
+  --color-gold-light: #e6d3a8;
+  --color-ink: #0b0b0b;
+  --color-cream: #faf8f4;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: #0b0b0b;
+}
+
+/* Subtle hover scale for gallery */
+.zoom-img {
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.zoom-parent:hover .zoom-img {
+  transform: scale(1.05);
+}
+
+/* Marquee for trust strip */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Hide scrollbar for review carousel */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
